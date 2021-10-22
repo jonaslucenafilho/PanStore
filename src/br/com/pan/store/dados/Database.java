@@ -5,12 +5,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 import br.com.pan.store.entidades.FormaDePagamento;
+import br.com.pan.store.entidades.PagamentoDinheiro;
 import br.com.pan.store.entidades.Produto;
 
 public class Database {
 	
 	private static Map<Integer, Produto> produtos = new HashMap<Integer, Produto>();
-	private static Map<Integer, FormaDePagamento> formasDePagamento;
+	private static Map<Integer, FormaDePagamento> formasDePagamento = new HashMap<Integer, FormaDePagamento>();
 	
 	public static Map<Integer, Produto> getProdutos() {
 		return produtos;
@@ -55,33 +56,31 @@ public class Database {
 		System.out.println("=============================================================================");
 	}
 	
-//	public static void popularFormasDePagamento() {
-//		ArrayList<FormaDePagamento> listaFormasDePagamento = new ArrayList<FormaDePagamento>();
-//		
-//		listaFormasPagamento.add(new FormaDePagamento(1, "Smart TV 55''", 5, 2999.90, "Samsung  ")) ;
-//		listaFormasPagamento.add(new FormaDePagamento(2, "Playstation 5", 3, 3599.90, "Sony     "));
-//		listaFormasPagamento.add(new FormaDePagamento(3, "Xbox Series X", 4, 3699.00, "Microsoft"));
-//		listaFormasPagamento.add(new FormaDePagamento(4, "Notebook Gamer", 2, 5999.90, "Lenovo   "));
-//
-//		
-//		for (FormaDePagamento i : listaFormasDePagamento) {
-//			getFormasDePagamento().put(i.getId(), i);
-//		}	
-//	}
-//	
-//	public static void listarFormasDePagamento() {
-//		System.out.println("=============================================================================");
-//		System.out.println("| CÓDIGO \t NOME \t\t QUANTIDADE \t PREÇO \t\t MARCA      |");
-//		
-//		for(int i = 1; i <= Database.getProdutos().size(); i++) {
-//			System.out.printf("|   %d \t     %s \t     %s \t       R$%.2f \t %s  |\n", 
-//					Database.getFormasDePagamento().get(i).getId(),
-//					Database.getFormasDePagamento().get(i).getNome(),
-//					Database.getFormasDePagamento().get(i).getQuantidade(),
-//					Database.getFormasDePagamento().get(i).getPreco(),
-//					Database.getFormasDePagamento().get(i).getMarca());
-//		}
-//		
-//		System.out.println("=============================================================================");
-//	}
+	public static void popularFormasDePagamento() {
+		ArrayList<FormaDePagamento> listaFormasDePagamento = new ArrayList<FormaDePagamento>();
+		
+		listaFormasDePagamento.add(new PagamentoDinheiro(1, "Dinheiro      ", 1, 20.0)) ;
+		listaFormasDePagamento.add(new PagamentoDinheiro(2, "Pix           ", 1, 20.0));
+		listaFormasDePagamento.add(new PagamentoDinheiro(3, "Cartão Crédito", 3, 0.00));
+		listaFormasDePagamento.add(new PagamentoDinheiro(4, "Cartão à Vista", 1, 10.0));
+	
+		for (FormaDePagamento i : listaFormasDePagamento) {
+			getFormasDePagamento().put(i.getId(), i);
+		}	
+	}
+	
+	public static void listarFormasDePagamento() {
+		System.out.println("============================================================");
+		System.out.println("| CÓDIGO \t FORMA \t\t PARCELA(S) \t DESCONTO  |");
+		
+		for(int i = 1; i <= Database.getFormasDePagamento().size(); i++) {
+			System.out.printf("|   %d \t     %s \t     %d \t       %.2f%% \t   |\n", 
+					Database.getFormasDePagamento().get(i).getId(),
+					Database.getFormasDePagamento().get(i).getNome(),
+					Database.getFormasDePagamento().get(i).getnParcelas(),
+					Database.getFormasDePagamento().get(i).getDesconto());
+		}
+		
+		System.out.println("============================================================");
+	}
 }
