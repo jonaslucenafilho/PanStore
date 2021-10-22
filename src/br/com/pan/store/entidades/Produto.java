@@ -6,11 +6,11 @@ public class Produto {
 
 	private Integer id;
 	private String nome;
-	private Double quantidade;
+	private Integer quantidade;
 	private Double preco;
 	private String marca;
 
-	public Produto(Integer id, String nome, Double quantidade, Double preco, String marca) {
+	public Produto(Integer id, String nome, Integer quantidade, Double preco, String marca) {
 		this.id = id;
 		this.nome = nome;
 		this.quantidade = quantidade;
@@ -26,7 +26,7 @@ public class Produto {
 		return nome;
 	}
 
-	public Double getQuantidade() {
+	public Integer getQuantidade() {
 		return quantidade;
 	}
 

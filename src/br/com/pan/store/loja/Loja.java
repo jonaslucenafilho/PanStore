@@ -1,10 +1,12 @@
 package br.com.pan.store.loja;
 
+import br.com.pan.store.dados.Database;
+
 public class Loja {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		
+		Database.popularProdutos();		
+		Database.listarProdutos();
 	}
-
 }
