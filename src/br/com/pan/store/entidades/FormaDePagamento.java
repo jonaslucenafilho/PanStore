@@ -5,9 +5,16 @@ public abstract class FormaDePagamento {
     private Integer id;
     private String nome;
     private Integer nParcelas;
-    private Double taxaJuros;
+    private Double desconto;
 
-    public Double calculaValor() {
+    public FormaDePagamento(Integer id, String nome, Integer nParcelas, Double desconto) {
+		this.id = id;
+		this.nome = nome;
+		this.nParcelas = nParcelas;
+		this.desconto = desconto;
+	}
+
+	public Double calculaValor(Carrinho carrinho) {
         return null;
     }
 
@@ -23,8 +30,8 @@ public abstract class FormaDePagamento {
         return nParcelas;
     }
 
-    public Double getTaxaJuros() {
-        return taxaJuros;
+    public Double getDesconto() {
+        return desconto;
     }
 
 }
