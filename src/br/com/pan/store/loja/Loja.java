@@ -11,5 +11,9 @@ public class Loja {
 		
 		Database.popularFormasDePagamento();
 		Database.listarFormasDePagamento();
+		
+		Database.baixarProdutoEstoque(1, 10);
+		
+		Database.listarProdutos();
 	}
 }
