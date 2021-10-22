@@ -11,9 +11,11 @@ public class PagamentoDinheiro extends FormaDePagamento {
 		Double total = 0.0;
 		
 		for (CarrinhoItem item : carrinho.getItens()) {	
-			total = item.getQuantidade() * item.getPrecoVendido();		
+			total += item.getQuantidade() * item.getPrecoVendido();		
 		}
 		
-		return total - total * (this.getDesconto() / 100);
+		total -= total * (this.getDesconto() / 100);
+		
+		return total;
 	}	
 }
