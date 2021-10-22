@@ -1,21 +1,26 @@
 package br.com.pan.store.entidades;
 
-public abstract class FormaDePagamento {
-
-    private Integer id;
+public class FormaDePagamento {
+	
+	private Integer id;
     private String nome;
     private Integer nParcelas;
     private Double taxaJuros;
+    public Double calculaValor;
 
     public Double calculaValor() {
-        return null;
-    }
+		return null;
+	}
+    
+    //public Double getCalculaValor() {
+    //    return calculaValor;
+    //}
 
-    public Integer getId() {
+    public Integer getId(int i) {
         return id;
     }
 
-    public String getNome() {
+    public String getNome(String string) {
         return nome;
     }
 
@@ -27,4 +32,9 @@ public abstract class FormaDePagamento {
         return taxaJuros;
     }
 
+	
+   
+	//public Double calculaValor() {
+	//	return null;
+	//}
 }
