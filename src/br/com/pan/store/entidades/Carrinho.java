@@ -14,8 +14,12 @@ public class Carrinho {
         this.nomeCliente = nomeCliente;
         this.formaPagamento = formaPagamento;
     }
+    
+    public ArrayList<CarrinhoItem> getItens() {
+		return itens;
+	}
 
-    public void AdicionarItem(CarrinhoItem carrinhoItem){
+	public void AdicionarItem(CarrinhoItem carrinhoItem){
         itens.add(carrinhoItem);
     }
 

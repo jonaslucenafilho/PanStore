@@ -10,4 +10,16 @@ public class CarrinhoItem {
         this.quantidade = quantidade;
         this.precoVendido = precoVendido;
     }
+
+	public Produto getProduto() {
+		return produto;
+	}
+
+	public Double getQuantidade() {
+		return quantidade;
+	}
+
+	public Double getPrecoVendido() {
+		return precoVendido;
+	}
 }
