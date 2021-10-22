@@ -8,5 +8,8 @@ public class Loja {
 		
 		Database.popularProdutos();		
 		Database.listarProdutos();
+		
+		Database.popularFormasDePagamento();
+		Database.listarFormasDePagamento();
 	}
 }
