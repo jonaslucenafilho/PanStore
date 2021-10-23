@@ -42,23 +42,26 @@ public class Carrinho {
         Double totalDaCompra = 0.0;
         Double totalComDesconto = formaDePagamento.calculaValor(this);
         System.out.println("\n=========================================================================");
-        System.out.println("                              CUPOM FISCAL");
+        System.out.println("|                              CUPOM FISCAL                             |");
         System.out.println("=========================================================================");
-        System.out.format("%-37s%-12s%-15s%-15s\n", "PRODUTO", "QUANT", "PRECO", "TOTAL");
+        System.out.format("| %-37s%-12s%-14s%-6s |\n", "PRODUTO", "QUANT", "PRECO", "TOTAL");
         for (CarrinhoItem item:itens) {
-            System.out.format("%-37s%-12d%-15.2f%-15.2f\n", item.getProduto().getNome().toUpperCase(), item.getQuantidade(), item.getPrecoVendido(), item.getQuantidade() * item.getPrecoVendido());
+            System.out.format("| %-37s%-12d%-13.2f%-5.2f |\n", item.getProduto().getNome().toUpperCase(), item.getQuantidade(), item.getPrecoVendido(), item.getQuantidade() * item.getPrecoVendido());
             totalDaCompra += item.getQuantidade() * item.getPrecoVendido();
         }
         System.out.println("-------------------------------------------------------------------------");
-        System.out.printf("TOTAL: %.2f                              TOTAL COM DESCONTO: %.2f\n", totalDaCompra, totalComDesconto);
+        System.out.printf("| TOTAL: %.2f                            TOTAL COM DESCONTO: %.2f |\n", totalDaCompra, totalComDesconto);
+        System.out.printf("| TRIBUTOS: %.2f                                                      |\n", totalComDesconto * 0.09);
         System.out.println("=========================================================================");
-        System.out.printf("CLIENTE: %s\n", this.nomeCliente);
-        System.out.printf("N. CUPOM: %d                 FORMA DE PAGAMENTO: %s\n", this.notaFiscal, formaDePagamento.getNome());
-        System.out.println("=========================================================================\n");
+        System.out.printf("| CLIENTE: %s                                                        |\n", this.nomeCliente.toUpperCase());
+        System.out.printf("| NÚMERO DO CUPOM: %d                 FORMA DE PAGAMENTO: %s |\n", this.notaFiscal, formaDePagamento.getNome());
+        System.out.println("=========================================================================");
 
     }
     
 	public void listarProdutosCarrinho() {
+		System.out.println("\n=============================================================================");
+        System.out.println("|                                 CARRINHO                                  |");
 		System.out.println("=============================================================================");
 		System.out.println("| CÓDIGO \t NOME \t\t QUANTIDADE \t PREÇO \t\t  MARCA     |");
 		
@@ -71,6 +74,6 @@ public class Carrinho {
 					item.getProduto().getMarca());
 		}
 		
-		System.out.println("=============================================================================\n");
+		System.out.println("=============================================================================");
 	}
 }

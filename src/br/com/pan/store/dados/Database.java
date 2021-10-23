@@ -44,6 +44,8 @@ public class Database {
 	}
 	
 	public static void listarProdutos() {
+		System.out.println("\n=============================================================================");
+        System.out.println("|                                 PRODUTOS                                  |");
 		System.out.println("=============================================================================");
 		System.out.println("| CÓDIGO \t NOME \t\t QUANTIDADE \t PREÇO \t\t  MARCA     |");
 		
