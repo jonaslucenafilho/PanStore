@@ -1,12 +1,10 @@
 package br.com.pan.store.loja;
 
+import java.util.Scanner;
+
 import br.com.pan.store.dados.Database;
 import br.com.pan.store.entidades.Carrinho;
 import br.com.pan.store.entidades.FormaDePagamento;
-
-import javax.xml.crypto.Data;
-import java.util.Locale;
-import java.util.Scanner;
 
 public class Loja {
 
@@ -36,6 +34,7 @@ public class Loja {
             } else if (!opcao.toUpperCase().equals("F")) {
 
                 if (carrinho == null) {
+                	System.out.println("Digite o nome do cliente: ");
                     String nomeCliente = sc.next();
                     sequencia++;
                     carrinho = new Carrinho(sequencia, nomeCliente);
@@ -49,7 +48,7 @@ public class Loja {
                     System.out.println("Nao ha quantidade suficiente para o item selecionado");
                 }
 
-            } else if (opcao.equals("F")) {
+            } else if (opcao.toUpperCase().equals("F")) {
 
                 Database.listarFormasDePagamento();
                 System.out.println("Escolha uma forma de pagamento");
