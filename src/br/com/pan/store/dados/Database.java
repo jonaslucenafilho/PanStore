@@ -27,16 +27,16 @@ public class Database {
 	public static void popularProdutos() {
 		ArrayList<Produto> listaProdutos = new ArrayList<Produto>();
 		
-		listaProdutos.add(new Produto(1, "Smart TV 55''", 5, 2999.90, "Samsung  ")) ;
-		listaProdutos.add(new Produto(2, "Playstation 5", 3, 3599.90, "Sony     "));
-		listaProdutos.add(new Produto(3, "Xbox Series X", 4, 3699.00, "Microsoft"));
-		listaProdutos.add(new Produto(4, "Notebook Gamer", 2, 5999.90, "Lenovo   "));
-		listaProdutos.add(new Produto(5, "Cadeira Gamer", 8, 999.95, "Husky    "));
-		listaProdutos.add(new Produto(6, "Soundbar SN4", 7, 899.90, "LG       "));
-		listaProdutos.add(new Produto(7, "ASTRO A40 TR", 5, 1300.00, "Logitech "));
-		listaProdutos.add(new Produto(8, "Teclado MX Keys", 8, 609.90, "Logitech "));
-		listaProdutos.add(new Produto(9, "Mouse MX Master", 6, 485.00, "Logitech "));
-		listaProdutos.add(new Produto(10, "Echo Dot 4ï¿½ ", 4, 700.00, "Amazon   "));
+		listaProdutos.add(new Produto(1, "Smart TV 55''".toUpperCase(), 5, 2999.90, "Samsung  ".toUpperCase())) ;
+		listaProdutos.add(new Produto(2, "Playstation 5".toUpperCase(), 3, 3599.90, "Sony     ".toUpperCase()));
+		listaProdutos.add(new Produto(3, "Xbox Series X".toUpperCase(), 4, 3699.00, "Microsoft".toUpperCase()));
+		listaProdutos.add(new Produto(4, "Notebook Gamer".toUpperCase(), 2, 5999.90, "Lenovo   ".toUpperCase()));
+		listaProdutos.add(new Produto(5, "Cadeira Gamer".toUpperCase(), 8, 999.95, "Husky    ".toUpperCase()));
+		listaProdutos.add(new Produto(6, "Soundbar SN4".toUpperCase(), 7, 899.90, "LG       ".toUpperCase()));
+		listaProdutos.add(new Produto(7, "ASTRO A40 TR".toUpperCase(), 5, 1300.00, "Logitech ".toUpperCase()));
+		listaProdutos.add(new Produto(8, "Teclado MX Keys".toUpperCase(), 8, 609.90, "Logitech ".toUpperCase()));
+		listaProdutos.add(new Produto(9, "Mouse MX Master".toUpperCase(), 6, 485.00, "Logitech ".toUpperCase()));
+		listaProdutos.add(new Produto(10, "Echo Dot 4ª ".toUpperCase(), 4, 700.00, "Amazon   ".toUpperCase()));
 		
 		for (Produto i : listaProdutos) {
 			getProdutos().put(i.getId(), i);
@@ -45,7 +45,7 @@ public class Database {
 	
 	public static void listarProdutos() {
 		System.out.println("=============================================================================");
-		System.out.println("| Cï¿½DIGO \t NOME \t\t QUANTIDADE \t PREï¿½O \t\t  MARCA     |");
+		System.out.println("| CÓDIGO \t NOME \t\t QUANTIDADE \t PREÇO \t\t  MARCA     |");
 		
 		for(int i = 1; i <= Database.getProdutos().size(); i++) {
 			System.out.printf("|   %d \t     %s \t     %s \t       R$%.2f \t %s  |\n", 
@@ -56,7 +56,7 @@ public class Database {
 					Database.getProdutos().get(i).getMarca());
 		}
 		
-		System.out.println("=============================================================================");
+		System.out.println("=============================================================================\n");
 	}
 	
 	public static void popularFormasDePagamento() {
@@ -73,8 +73,8 @@ public class Database {
 	}
 	
 	public static void listarFormasDePagamento() {
-		System.out.println("=========================================================================");
-		System.out.println("|    Cï¿½DIGO \t      FORMA \t\t PARCELA(S) \t DESCONTO       |");
+		System.out.println("\n=========================================================================");
+		System.out.println("|    CÓDIGO \t      FORMA \t\t PARCELA(S) \t DESCONTO       |");
 		
 		for(int i = 1; i <= Database.getFormasDePagamento().size(); i++) {
 			System.out.printf("|      %d \t     %s \t     %d \t          %.2f%% \t|\n", 
@@ -84,7 +84,7 @@ public class Database {
 					Database.getFormasDePagamento().get(i).getDesconto());
 		}
 		
-		System.out.println("=========================================================================");
+		System.out.println("=========================================================================\n");
 	}
 	
 	public static void baixarProdutoEstoque(Integer id, Integer quantidade) {

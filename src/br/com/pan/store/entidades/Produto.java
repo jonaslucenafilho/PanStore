@@ -40,7 +40,6 @@ public class Produto {
 	
 	public boolean reduzirQuantidade(Integer quantidade) {
 		if (this.getQuantidade() < quantidade) {
-			System.out.println("N�o temos essa quantidade em estoque!");
 			return false;
 		} else {
 			this.quantidade -= quantidade;
