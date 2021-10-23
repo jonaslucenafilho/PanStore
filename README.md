@@ -38,6 +38,7 @@
 
 * [Escopo e objetivo](#Escopo-e-objetivo)
 * [Diagrama de Classes](#Diagrama-de-Classes)
+* [Gerência do Projeto](#Gerência-do-Projeto)
 * [Patrocinadores](#Patrocinadores)
 
 
@@ -52,7 +53,7 @@ Desenvolver um programa para simular um carrinho de compras sendo as telas demon
 
 Para facilitar a divisão de tarefas entre os membros do time e representar de forma visual a arquitetura utilizada, segue o diagrama de classes abaixo.
 
-![](/home/carlos/cursos/PanAcademy/PanStore/Desafio1.jpg)
+![](Desafio1.jpg)
 
 
 
@@ -64,7 +65,25 @@ Houve a tentativa de encapsulamento dos membros das classes assim como a divisã
 
 
 
+## Gerência do Projeto
+
+O time é multidisciplinar auto gerenciável e não foi necessário um PO ou gerente de projeto.
+
+Para gerenciamento do projeto foi utilizado o Trello sendo aplicado um quadro KANBAN onde cada desenvolvedor arrasta um card para realizar a tarefa. 
+
+Abaixo um screenshot ilustrativo feito durante o desenvolvimento do projeto
+
+![](trello-screenshot.jpg)
+
+
+
+
+
 ## Patrocinadores
+
+
+
+
 
 ![image](https://user-images.githubusercontent.com/92064386/138007156-3ae6e393-a770-4bf7-85cb-9f9d390fb118.png)
 ![image](https://user-images.githubusercontent.com/92064386/138007193-47cac947-928e-4909-a299-0ae99b35eed9.png)
