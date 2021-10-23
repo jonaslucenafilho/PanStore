@@ -48,7 +48,7 @@ public class Loja {
                     nomeCliente = sc.nextLine();
                 }
 
-                System.out.print("DIGITE A QUANTIDADE: \n");
+                System.out.print("DIGITE A QUANTIDADE: ");
                 Integer qtd = sc.nextInt();                             
 
                 if (!carrinho.adicionarItem(Database.getProdutos().get(Integer.valueOf(opcao)), qtd)) {

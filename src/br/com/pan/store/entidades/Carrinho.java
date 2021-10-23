@@ -1,9 +1,8 @@
 package br.com.pan.store.entidades;
 
-import br.com.pan.store.dados.Database;
-
-import javax.xml.crypto.Data;
 import java.util.ArrayList;
+
+import br.com.pan.store.dados.Database;
 
 public class Carrinho {
     private Integer id;
