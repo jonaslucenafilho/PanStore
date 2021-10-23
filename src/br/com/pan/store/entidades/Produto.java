@@ -37,6 +37,14 @@ public class Produto {
 	public String getMarca() {
 		return marca;
 	}
+	
+	public void reduzirQuantidade(Integer quantidade) {
+		if (this.getQuantidade() < quantidade) {
+			System.out.println("Não temos essa quantidade em estoque!");
+		} else {
+			this.quantidade -= quantidade;			
+		}
+	}
 
 	@Override
 	public int hashCode() {

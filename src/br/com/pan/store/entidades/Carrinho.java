@@ -24,6 +24,13 @@ public class Carrinho {
     }
 
     public void GerarCupomFiscal(){
-        System.out.println("CUPOM FISCAL");
+        System.out.println("=============================================");
+        System.out.println("                CUPOM FISCAL");
+        System.out.println("=============================================");
+        System.out.format("%-26s%-12s%-15s\n", "PRODUTO", "QUANT", "PREÇO");
+        for (CarrinhoItem item:itens) {
+            System.out.format("%-26s%-12d%-15.2f\n", item.getProduto().getNome(), item.getQuantidade(), item.getPrecoVendido());
+        }
+        System.out.println("=============================================\n");
     }
 }

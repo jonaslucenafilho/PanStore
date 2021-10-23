@@ -83,4 +83,8 @@ public class Database {
 		
 		System.out.println("============================================================");
 	}
+	
+	public static void baixarProdutoEstoque(Integer id, Integer quantidade) {
+		getProdutos().get(id).reduzirQuantidade(quantidade);
+	}
 }
