@@ -39,6 +39,7 @@
 * [Escopo e objetivo](#Escopo-e-objetivo)
 * [Diagrama de Classes](#Diagrama-de-Classes)
 * [Gerência do Projeto](#Gerência-do-Projeto)
+* [Screenshots](#Screenshots)
 * [Patrocinadores](#Patrocinadores)
 
 
@@ -76,6 +77,20 @@ Abaixo um screenshot ilustrativo feito durante o desenvolvimento do projeto
 ![](trello-screenshot.jpg)
 
 
+
+## Screnshots
+
+![](tela1.jpg)
+
+![](tela2.jpg)
+
+![](tela3.jpg)
+
+![](tela4.jpg)
+
+![](tela5.jpg)
+
+![](tela6.jpg)
 
 
 
