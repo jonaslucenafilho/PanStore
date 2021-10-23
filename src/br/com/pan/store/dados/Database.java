@@ -5,7 +5,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 import br.com.pan.store.entidades.FormaDePagamento;
+import br.com.pan.store.entidades.PagamentoCartaoCredito;
+import br.com.pan.store.entidades.PagamentoCartaoVista;
 import br.com.pan.store.entidades.PagamentoDinheiro;
+import br.com.pan.store.entidades.PagamentoPix;
 import br.com.pan.store.entidades.Produto;
 
 public class Database {
@@ -33,7 +36,7 @@ public class Database {
 		listaProdutos.add(new Produto(7, "ASTRO A40 TR", 5, 1300.00, "Logitech "));
 		listaProdutos.add(new Produto(8, "Teclado MX Keys", 8, 609.90, "Logitech "));
 		listaProdutos.add(new Produto(9, "Mouse MX Master", 6, 485.00, "Logitech "));
-		listaProdutos.add(new Produto(10, "Echo Dot 4ï¿½ ", 4, 700.00, "Amazon   "));
+		listaProdutos.add(new Produto(10, "Echo Dot 4ª ", 4, 700.00, "Amazon   "));
 		
 		for (Produto i : listaProdutos) {
 			getProdutos().put(i.getId(), i);
@@ -42,7 +45,7 @@ public class Database {
 	
 	public static void listarProdutos() {
 		System.out.println("=============================================================================");
-		System.out.println("| Cï¿½DIGO \t NOME \t\t QUANTIDADE \t PREï¿½O \t\t  MARCA     |");
+		System.out.println("| CÓDIGO \t NOME \t\t QUANTIDADE \t PREÇO \t\t  MARCA     |");
 		
 		for(int i = 1; i <= Database.getProdutos().size(); i++) {
 			System.out.printf("|   %d \t     %s \t     %s \t       R$%.2f \t %s  |\n", 
@@ -59,10 +62,10 @@ public class Database {
 	public static void popularFormasDePagamento() {
 		ArrayList<FormaDePagamento> listaFormasDePagamento = new ArrayList<FormaDePagamento>();
 		
-		listaFormasDePagamento.add(new PagamentoDinheiro(1 )) ;
-		listaFormasDePagamento.add(new PagamentoDinheiro(2 ));
-		listaFormasDePagamento.add(new PagamentoDinheiro(3 ));
-		listaFormasDePagamento.add(new PagamentoDinheiro(4 ));
+		listaFormasDePagamento.add(new PagamentoDinheiro(1)) ;
+		listaFormasDePagamento.add(new PagamentoPix(2));
+		listaFormasDePagamento.add(new PagamentoCartaoCredito(3));
+		listaFormasDePagamento.add(new PagamentoCartaoVista(4));
 	
 		for (FormaDePagamento i : listaFormasDePagamento) {
 			getFormasDePagamento().put(i.getId(), i);
@@ -70,18 +73,18 @@ public class Database {
 	}
 	
 	public static void listarFormasDePagamento() {
-		System.out.println("============================================================");
-		System.out.println("| Cï¿½DIGO \t FORMA \t\t PARCELA(S) \t DESCONTO  |");
+		System.out.println("=========================================================================");
+		System.out.println("|    CÓDIGO \t      FORMA \t\t PARCELA(S) \t DESCONTO       |");
 		
 		for(int i = 1; i <= Database.getFormasDePagamento().size(); i++) {
-			System.out.printf("|   %d \t     %s \t     %d \t       %.2f%% \t   |\n", 
+			System.out.printf("|      %d \t     %s \t     %d \t          %.2f%% \t|\n", 
 					Database.getFormasDePagamento().get(i).getId(),
 					Database.getFormasDePagamento().get(i).getNome(),
 					Database.getFormasDePagamento().get(i).getnParcelas(),
 					Database.getFormasDePagamento().get(i).getDesconto());
 		}
 		
-		System.out.println("============================================================");
+		System.out.println("=========================================================================");
 	}
 	
 	public static void baixarProdutoEstoque(Integer id, Integer quantidade) {
