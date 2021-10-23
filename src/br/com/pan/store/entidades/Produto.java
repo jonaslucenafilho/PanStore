@@ -38,11 +38,13 @@ public class Produto {
 		return marca;
 	}
 	
-	public void reduzirQuantidade(Integer quantidade) {
+	public boolean reduzirQuantidade(Integer quantidade) {
 		if (this.getQuantidade() < quantidade) {
-			System.out.println("Não temos essa quantidade em estoque!");
+			System.out.println("Nï¿½o temos essa quantidade em estoque!");
+			return false;
 		} else {
-			this.quantidade -= quantidade;			
+			this.quantidade -= quantidade;
+			return true;
 		}
 	}
 

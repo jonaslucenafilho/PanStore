@@ -1,9 +1,9 @@
 package br.com.pan.store.entidades;
 
 public class CarrinhoItem {
-    public Produto produto;
-    public Integer quantidade;
-    public Double precoVendido;
+    private Produto produto;
+	private Integer quantidade;
+	private Double precoVendido;
 
     public CarrinhoItem(Produto produto, Integer quantidade, Double precoVendido) {
         this.produto = produto;
