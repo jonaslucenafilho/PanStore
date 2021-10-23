@@ -42,20 +42,21 @@ public class Carrinho {
         Database.getVendasRealizadas().add(this);
         Double totalDaCompra = 0.0;
         Double totalComDesconto = formaDePagamento.calculaValor(this);
-        System.out.println("=============================================");
-        System.out.println("                CUPOM FISCAL");
-        System.out.println("=============================================");
-        System.out.format("%-26s%-12s%-15s\n", "PRODUTO", "QUANT", "PREÇO");
+        System.out.println("=========================================================================");
+        System.out.println("                              CUPOM FISCAL");
+        System.out.println("=========================================================================");
+        System.out.format("%-37s%-12s%-15s%-15s\n", "PRODUTO", "QUANT", "PRECO", "TOTAL");
         for (CarrinhoItem item:itens) {
-            System.out.format("%-26s%-12d%-15.2f%-15.2f\n", item.getProduto().getNome(), item.getQuantidade(), item.getPrecoVendido(), item.getQuantidade() * item.getPrecoVendido());
+            System.out.format("%-37s%-12d%-15.2f%-15.2f\n", item.getProduto().getNome(), item.getQuantidade(), item.getPrecoVendido(), item.getQuantidade() * item.getPrecoVendido());
             totalDaCompra += item.getQuantidade() * item.getPrecoVendido();
         }
-        System.out.printf("TOTAL %.2f\n", totalDaCompra);
-        System.out.printf("TOTAL COM DESCONTO %.2f\n", totalComDesconto);
-        System.out.println("=============================================\n");
+        System.out.println("-------------------------------------------------------------------------");
+        System.out.printf("TOTAL: %.2f\n", totalDaCompra);
+        System.out.printf("TOTAL COM DESCONTO: %.2f\n", totalComDesconto);
+        System.out.println("=========================================================================");
         System.out.printf("Cliente: %s\n", this.nomeCliente);
-        System.out.printf("Fatura: %d   Forma Pagamento: %s\n", this.notaFiscal, formaDePagamento.getNome());
-        System.out.println("=============================================\n");
+        System.out.printf("Fatura: %d               Forma Pagamento: %s\n", this.notaFiscal, formaDePagamento.getNome());
+        System.out.println("=========================================================================\n");
 
     }
 }
