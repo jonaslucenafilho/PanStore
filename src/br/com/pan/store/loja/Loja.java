@@ -20,38 +20,45 @@ public class Loja {
         Carrinho carrinho = null;
 
         Integer sequencia = 0;
+        
+        System.out.println("========================== BEM VINDO A PANSTORE =============================\n");
 
         while (true) {
 
             Database.listarProdutos();
 
-            showMenu();
-
+            System.out.println("======================== ESCOLHA O PRODUTO PELO CÓDIGO ======================\n"
+            		+ "========================= F PARA FINALIZAR O CARRINHO =======================\n"
+            		+ "============================= 0 PARA SAIR DA LOJA ===========================\n");
+            
+            System.out.print("DIGITE A SUA OPÇÃO: ");
+            
             opcao = sc.next();
 
             if (opcao.equals("0")) {
+            	System.out.println("\n======================= OBRIGADO POR USAR A NOSSA LOJA ======================");
                 break;
             } else if (!opcao.toUpperCase().equals("F")) {
 
                 if (carrinho == null) {
-                	System.out.println("Digite o nome do cliente: ");
+                	System.out.print("DIGITE O NOME DO CLIENTE: ");
                     String nomeCliente = sc.next();
                     sequencia++;
                     carrinho = new Carrinho(sequencia, nomeCliente);
-
+                    nomeCliente = sc.nextLine();
                 }
 
-                System.out.println("Digite a quantidade");
+                System.out.print("DIGITE A QUANTIDADE: ");
                 Integer qtd = sc.nextInt();
 
                 if (!carrinho.adicionarItem(Database.getProdutos().get(Integer.valueOf(opcao)), qtd)) {
-                    System.out.println("Nao ha quantidade suficiente para o item selecionado");
+                    System.out.println("\nNÃO HÁ QUANTIDADE SUFICIENTE PARA O ITEM SELECIONADO\n");
                 }
 
             } else if (opcao.toUpperCase().equals("F")) {
 
                 Database.listarFormasDePagamento();
-                System.out.println("Escolha uma forma de pagamento");
+                System.out.print("ESCOLHA UMA FORMA DE PAGAMENTO: ");
 
                 Integer codigoForma = sc.nextInt();
 
@@ -62,16 +69,8 @@ public class Loja {
                 carrinho = null;
 
             } else {
-                System.out.println("Opcao invalida");
+                System.out.println("OPÇÃO INVÁLIDA");
             }
-
         }
-
-
-    }
-
-
-    private static void showMenu() {
-        System.out.println("Escolha o produto ou F para finalizar o carrinho e 0 para sair da loja");
     }
 }

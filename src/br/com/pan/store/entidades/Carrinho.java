@@ -28,7 +28,7 @@ public class Carrinho {
     public boolean adicionarItem(Produto produto, Integer quantidade) {
         CarrinhoItem item = new CarrinhoItem(produto,quantidade,produto.getPreco());
         if(produto.reduzirQuantidade(quantidade)) {
-            System.out.printf("Produto %s quantidade %d adicionado ao carrinho\n", produto.getNome(),quantidade);
+            System.out.printf("\n%d %s ADICIONADO(S) AO CARRINHO\n", quantidade, produto.getNome());
             adicionarItem(item);
             return true;
         } else return false;
