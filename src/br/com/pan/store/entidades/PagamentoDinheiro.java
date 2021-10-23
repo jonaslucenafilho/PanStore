@@ -3,7 +3,7 @@ package br.com.pan.store.entidades;
 public class PagamentoDinheiro extends FormaDePagamento {
 
 	public PagamentoDinheiro(Integer id ) {
-		super(id, "Dinheiro", 1, 20.0);
+		super(id, "DINHEIRO", 1, 20.0);
 	}
 
 	@Override
