@@ -2,6 +2,7 @@ package br.com.pan.store.entidades;
 
 import br.com.pan.store.dados.Database;
 
+import javax.xml.crypto.Data;
 import java.util.ArrayList;
 
 public class Carrinho {
@@ -37,6 +38,8 @@ public class Carrinho {
         this.formaPagamento = formaDePagamento;
 
         this.notaFiscal = Database.getVendasRealizadas().size()+1;
+
+        Database.getVendasRealizadas().add(this);
 
         System.out.println("=============================================");
         System.out.println("                CUPOM FISCAL");
