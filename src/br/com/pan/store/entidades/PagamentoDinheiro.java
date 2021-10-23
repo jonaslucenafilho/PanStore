@@ -2,8 +2,8 @@ package br.com.pan.store.entidades;
 
 public class PagamentoDinheiro extends FormaDePagamento {
 
-	public PagamentoDinheiro(Integer id, String nome, Integer nParcelas, Double taxaJuros) {
-		super(id, nome, nParcelas, taxaJuros);
+	public PagamentoDinheiro(Integer id ) {
+		super(id, "Dinheiro", 1, 20.0);
 	}
 
 	@Override

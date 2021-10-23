@@ -9,7 +9,7 @@ public abstract class FormaDePagamento {
 
     public FormaDePagamento(Integer id, String nome, Integer nParcelas, Double desconto) {
 		this.id = id;
-		this.nome = nome;
+		this.nome = nome + " ".repeat(14 - nome.length());
 		this.nParcelas = nParcelas;
 		this.desconto = desconto;
 	}
