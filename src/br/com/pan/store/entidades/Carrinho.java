@@ -5,9 +5,11 @@ import java.util.ArrayList;
 import br.com.pan.store.dados.Database;
 
 public class Carrinho {
-    private Integer id;
+    @SuppressWarnings("unused")
+	private Integer id;
     private String nomeCliente;
-    private FormaDePagamento formaPagamento;
+    @SuppressWarnings("unused")
+	private FormaDePagamento formaPagamento;
     private Integer notaFiscal;
     private ArrayList<CarrinhoItem> itens = new ArrayList<CarrinhoItem>();
 
@@ -69,8 +71,8 @@ public class Carrinho {
 			System.out.printf("|   %d \t     %s \t     %s \t       R$%.2f \t %s  |\n", 
 					item.getProduto().getId(),
 					item.getProduto().getNome(),
-					item.getProduto().getQuantidade(),
-					item.getProduto().getPreco(),
+					item.getQuantidade(),
+					item.getProduto().getPreco() * item.getQuantidade(),
 					item.getProduto().getMarca());
 		}
 		

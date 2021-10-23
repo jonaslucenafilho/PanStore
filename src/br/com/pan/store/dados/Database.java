@@ -76,6 +76,8 @@ public class Database {
 	
 	public static void listarFormasDePagamento() {
 		System.out.println("\n=========================================================================");
+        System.out.println("|                           FORMAS DE PAGAMENTO                         |");
+		System.out.println("=========================================================================");
 		System.out.println("|    CÓDIGO \t      FORMA \t\t PARCELA(S) \t DESCONTO       |");
 		
 		for(int i = 1; i <= Database.getFormasDePagamento().size(); i++) {
