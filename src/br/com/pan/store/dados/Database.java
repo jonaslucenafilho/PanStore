@@ -33,7 +33,7 @@ public class Database {
 		listaProdutos.add(new Produto(7, "ASTRO A40 TR", 5, 1300.00, "Logitech "));
 		listaProdutos.add(new Produto(8, "Teclado MX Keys", 8, 609.90, "Logitech "));
 		listaProdutos.add(new Produto(9, "Mouse MX Master", 6, 485.00, "Logitech "));
-		listaProdutos.add(new Produto(10, "Echo Dot 4ª ", 4, 700.00, "Amazon   "));
+		listaProdutos.add(new Produto(10, "Echo Dot 4ï¿½ ", 4, 700.00, "Amazon   "));
 		
 		for (Produto i : listaProdutos) {
 			getProdutos().put(i.getId(), i);
@@ -42,7 +42,7 @@ public class Database {
 	
 	public static void listarProdutos() {
 		System.out.println("=============================================================================");
-		System.out.println("| CÓDIGO \t NOME \t\t QUANTIDADE \t PREÇO \t\t  MARCA     |");
+		System.out.println("| Cï¿½DIGO \t NOME \t\t QUANTIDADE \t PREï¿½O \t\t  MARCA     |");
 		
 		for(int i = 1; i <= Database.getProdutos().size(); i++) {
 			System.out.printf("|   %d \t     %s \t     %s \t       R$%.2f \t %s  |\n", 
@@ -59,10 +59,10 @@ public class Database {
 	public static void popularFormasDePagamento() {
 		ArrayList<FormaDePagamento> listaFormasDePagamento = new ArrayList<FormaDePagamento>();
 		
-		listaFormasDePagamento.add(new PagamentoDinheiro(1, "Dinheiro      ", 1, 20.0)) ;
-		listaFormasDePagamento.add(new PagamentoDinheiro(2, "Pix           ", 1, 20.0));
-		listaFormasDePagamento.add(new PagamentoDinheiro(3, "Cartão Crédito", 3, 0.00));
-		listaFormasDePagamento.add(new PagamentoDinheiro(4, "Cartão à Vista", 1, 10.0));
+		listaFormasDePagamento.add(new PagamentoDinheiro(1 )) ;
+		listaFormasDePagamento.add(new PagamentoDinheiro(2 ));
+		listaFormasDePagamento.add(new PagamentoDinheiro(3 ));
+		listaFormasDePagamento.add(new PagamentoDinheiro(4 ));
 	
 		for (FormaDePagamento i : listaFormasDePagamento) {
 			getFormasDePagamento().put(i.getId(), i);
@@ -71,7 +71,7 @@ public class Database {
 	
 	public static void listarFormasDePagamento() {
 		System.out.println("============================================================");
-		System.out.println("| CÓDIGO \t FORMA \t\t PARCELA(S) \t DESCONTO  |");
+		System.out.println("| Cï¿½DIGO \t FORMA \t\t PARCELA(S) \t DESCONTO  |");
 		
 		for(int i = 1; i <= Database.getFormasDePagamento().size(); i++) {
 			System.out.printf("|   %d \t     %s \t     %d \t       %.2f%% \t   |\n", 

@@ -2,8 +2,8 @@ package br.com.pan.store.entidades;
 
 public class PagamentoDinheiro extends FormaDePagamento {
 
-	public PagamentoDinheiro(Integer id, String nome, Integer nParcelas, Double taxaJuros) {
-		super(id, nome, nParcelas, taxaJuros);
+	public PagamentoDinheiro(Integer id ) {
+		super(id, "Dinheiro", 1, 20.0);
 	}
 
 	@Override
@@ -11,9 +11,9 @@ public class PagamentoDinheiro extends FormaDePagamento {
 		Double total = 0.0;
 		
 		for (CarrinhoItem item : carrinho.getItens()) {	
-			total = item.getQuantidade() * item.getPrecoVendido();		
+			total += item.getQuantidade() * item.getPrecoVendido();
 		}
 		
-		return total - total * (this.getDesconto() / 100);
+		return total - ( total * (this.getDesconto() / 100) ) ;
 	}	
 }
