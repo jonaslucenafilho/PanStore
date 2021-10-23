@@ -48,12 +48,14 @@ public class Loja {
                     nomeCliente = sc.nextLine();
                 }
 
-                System.out.print("DIGITE A QUANTIDADE: ");
-                Integer qtd = sc.nextInt();
+                System.out.print("DIGITE A QUANTIDADE: \n");
+                Integer qtd = sc.nextInt();                             
 
                 if (!carrinho.adicionarItem(Database.getProdutos().get(Integer.valueOf(opcao)), qtd)) {
                     System.out.println("\nNÃO HÁ QUANTIDADE SUFICIENTE PARA O ITEM SELECIONADO\n");
                 }
+                
+                carrinho.listarProdutosCarrinho();
 
             } else if (opcao.toUpperCase().equals("F")) {
 

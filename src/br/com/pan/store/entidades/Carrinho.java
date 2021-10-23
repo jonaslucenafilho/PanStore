@@ -58,4 +58,20 @@ public class Carrinho {
         System.out.println("=========================================================================\n");
 
     }
+    
+	public void listarProdutosCarrinho() {
+		System.out.println("=============================================================================");
+		System.out.println("| CÓDIGO \t NOME \t\t QUANTIDADE \t PREÇO \t\t  MARCA     |");
+		
+		for(CarrinhoItem item : itens) {
+			System.out.printf("|   %d \t     %s \t     %s \t       R$%.2f \t %s  |\n", 
+					item.getProduto().getId(),
+					item.getProduto().getNome(),
+					item.getProduto().getQuantidade(),
+					item.getProduto().getPreco(),
+					item.getProduto().getMarca());
+		}
+		
+		System.out.println("=============================================================================\n");
+	}
 }
