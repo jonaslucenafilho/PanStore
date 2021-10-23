@@ -51,11 +51,10 @@ public class Carrinho {
             totalDaCompra += item.getQuantidade() * item.getPrecoVendido();
         }
         System.out.println("-------------------------------------------------------------------------");
-        System.out.printf("TOTAL: %.2f\n", totalDaCompra);
-        System.out.printf("TOTAL COM DESCONTO: %.2f\n", totalComDesconto);
+        System.out.printf("TOTAL: %.2f                              TOTAL COM DESCONTO: %.2f\n", totalDaCompra, totalComDesconto);
         System.out.println("=========================================================================");
         System.out.printf("CLIENTE: %s\n", this.nomeCliente);
-        System.out.printf("FATURA: %d            FORMA DE PAGAMENTO: %s\n", this.notaFiscal, formaDePagamento.getNome());
+        System.out.printf("N. CUPOM: %d                 FORMA DE PAGAMENTO: %s\n", this.notaFiscal, formaDePagamento.getNome());
         System.out.println("=========================================================================\n");
 
     }
